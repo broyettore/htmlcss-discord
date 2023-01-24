@@ -19,7 +19,7 @@ html {
 
 /****************** REUSABLE *******************/
 
-.ht-bar, .section-content-ctn {
+.ht-bar, .section-content-ctn, .last-ctn {
     width: 1180px;
 }
 
@@ -48,10 +48,14 @@ a:hover {
 
 .hb-ctn p,
 .hb-btn-ctn a,
-.content-text p {
+.content-text p,
+.last-ctn p {
     font-size: 2rem;
 }
 
+.hb-ctn h1, .last-ctn h2 {
+    font-family: 'Bangers', cursive;
+}
 
 /***************** HEADER SECTION ****************/
 
@@ -91,7 +95,6 @@ ul li {
 }
 
 .hb-ctn h1 {
-    font-family: 'Bangers', cursive;
     font-size: 5.6rem;
 }
 
@@ -153,8 +156,36 @@ ul li {
 }
 
 .last-ctn {
-    height: 600px;
+    text-align: center;
 }
+
+.last-ctn h2 {
+    font-size: 4rem;
+}
+
+.last-ctn h3 {
+    font-size: 3.2rem;
+    margin-bottom: 30px;
+}
+
+.last-ctn p {
+    margin-top: 20px;
+}
+
+.last-ctn-img {
+    margin-bottom: 30px;
+}
+
+.last-ctn-btn {
+    background-color: #5865F2;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.4rem;
+    padding: 12px 24px;
+    border-radius: 28px;
+}
+
+
 
 
 
