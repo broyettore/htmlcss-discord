@@ -6,10 +6,6 @@
     box-sizing: border-box;
 }
 
-header, main, footer {
-    margin: 0 auto;
-}
-
 html {
     scroll-behavior: smooth;
     font-size: 62.5%;
@@ -19,7 +15,11 @@ html {
 
 /****************** REUSABLE *******************/
 
-.ht-bar, .section-content-ctn, .last-ctn {
+.ht-bar, 
+.section-content-ctn, 
+.last-ctn, 
+.footer-top,
+.footer-bottom {
     width: 1180px;
 }
 
@@ -36,7 +36,7 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+a:hover:not(.content-right > a){
     cursor: pointer;
     transform: translateY(-6px);
     transition: ease .40s;
@@ -53,9 +53,16 @@ a:hover {
     font-size: 2rem;
 }
 
-.hb-ctn h1, .last-ctn h2 {
+.hb-ctn h1, 
+.last-ctn h2,
+.content-left h4 {
     font-family: 'Bangers', cursive;
 }
+
+.content-right a span:hover, .navbar ul li a:hover{
+    text-decoration: underline;
+}
+
 
 /***************** HEADER SECTION ****************/
 
@@ -77,13 +84,17 @@ ul {
     display: flex;
 }
 
-ul li {
+ul li  {
     font-size: 1.6rem;
     margin: 10px;
     padding: 10px;
 }
 
-.login {
+ul li a {
+    color: #ffffff;
+}
+
+.login, .signup {
     font-size: 1.4rem;
     padding: 7px 16px;
     border-radius: 40px;
@@ -123,12 +134,18 @@ ul li {
 
 /***************** MAIN SECTION ****************/
 
+
 .section-ctn:nth-child(odd) {
     background-color: #ffffff;
 }
 
 .section-ctn:nth-child(even) {
     background-color: #d3d3d3;
+    --mask: 
+    linear-gradient(to bottom,#0000 30px,#000 0),
+    radial-gradient(30px,#000 98%,#0000) top/55.50px 60px;
+    -webkit-mask: var(--mask);
+          mask: var(--mask);
 }
 
 .section-content-ctn {
@@ -156,6 +173,9 @@ ul li {
 }
 
 .last-ctn {
+    background-image: url(../images/stars.svg);
+    background-position: bottom;
+    background-repeat: no-repeat;
     text-align: center;
 }
 
@@ -185,55 +205,102 @@ ul li {
     border-radius: 28px;
 }
 
-
-
-
-
 /***************** FOOTER SECTION ****************/
 
 footer {
     background-color: #23272a;
+    padding: 80px 64px;
 }
 
 .footer-top {
     display: flex;
-    width: 70%;
+    justify-content: space-evenly;
     margin: 0 auto;
-    padding: 5px 0 20px 0;
 }
 
-.first-ctn, .footer-top-ctn {
-    border: 1px dashed  black;
+.footer-top-right {
+    display: flex;
+    gap: 80px;
 }
 
-.footer-top-ctn {
-    background-color: #20b2aa;
-    height: 400px;
-    width: 17.5%;
+.content-left {
+    width: 70%;
 }
 
-.first-ctn {
-    background-color: #f08080;
-    width: 30%;
+.content-left h4 {
+    color: #4265E6;
+    font-size: 3.2rem;
+    font-weight: 600;
+}
+
+.flag {
+    width: 16px;
+    margin-right: 5px;
+}
+
+.lang-choice {
+    display: inline-block;
+    font-size: 1.4rem;
+    color: #ffffff;
+}
+
+.lang-choice, .icon-ctn {
+    margin-top: 24px;
+}
+
+.icon-ctn {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.icon-ctn i {
+    color: #ffffff;
+    font-size: 2.2rem;
+    padding-right: 20px;
+}
+
+.icon-ctn  i:hover {
+    cursor: pointer;
+}
+
+.content-right {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.content-right  h5, a {
+    font-size: 1.6rem;
+}
+
+.content-right a {
+    margin-top: 8px;
+}
+
+.content-right h5 {
+    color: #5865F2;
+}
+
+.content-right a > span {
+    color: #ffffff;
 }
 
 .footer-bottom {
     display: flex;
     justify-content: center;
-    border: 1px solid #7fffd4;
-    padding-top: 15px ;
-    width: 100%;
+    margin: 0 auto;
+    border-top: 1px solid #5865f2;
+    padding-top: 32px;
 }
 
 .footer-bottom-ctn {
     display: flex;
     justify-content: space-between;
-    background-color: #7fffd4;
     padding: 10px 0;
-    width: 70%;
+    width: 100%;
 }
 
-.footer-logo, .footer-button {
-    background-color: #ffb6c1;
-    border: 1px dashed black;
+.signup {
+    background-color: #5865f2;
+    color: #ffffff;
 }
